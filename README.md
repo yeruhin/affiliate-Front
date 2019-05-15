@@ -26,7 +26,7 @@ npm i
 npm run serve
 
 ```
-and on the backend project run:
+# on the backend project run:
 
 ```
 node server
