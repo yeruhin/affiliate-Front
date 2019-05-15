@@ -32,4 +32,6 @@ npm run serve
 node server
 ```
 
-after that just open http://localhost:8080 and see the project.
+Now you can open http://localhost:8080 and see the project.
+
+Or if you prefer you can see the project on heroku : https://affiliate-test-app.herokuapp.com/ .
