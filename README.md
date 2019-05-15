@@ -16,6 +16,12 @@ To set up & run the project you need to download the front project and the backe
 
 after you download the projects on the front end run : 
 
+# Install all the node modules on the Frontend 
+```
+npm i
+```
+
+# Run the project
 ```
 npm run serve
 
