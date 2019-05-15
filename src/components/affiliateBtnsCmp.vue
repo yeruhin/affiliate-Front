@@ -1,20 +1,31 @@
 <template>
   <section class="btns">
-    <button type="button" class="btn btn-primary" @click="FetchWords">Fetch-words</button>
-    <button type="button" class="btn btn-secondary" @click="ShowWords">Show-report</button>
+    <button type="button" class="btn btn-primary" @click="FetchWords">Fetch-Words</button>
+    <button type="button" class="btn btn-secondary" @click="ToggleTable">{{btnContext}}</button>
   </section>
 </template>
 
 <script>
 export default {
+  props:{
+    isOpen :{
+      type : Boolean,
+      required  : true
+    }
+  },
   methods: {
     FetchWords() {
       this.$emit("FetchWords");
     },
-    ShowWords() {
-      this.$emit("ShowWords");
+    ToggleTable() {
+      this.$emit('ToggleTable')
     }
-  }
+  },
+  computed:{
+    btnContext(){
+      return ( this.$props.isOpen) ? 'Close-Report' : 'Show-Report'
+    }
+  },
 };
 </script>
 

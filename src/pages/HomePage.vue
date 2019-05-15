@@ -1,6 +1,6 @@
 <template>
   <section class="home-page">
-    <affiliate-btns @FetchWords="FetchWords" @ShowWords="ShowWords"/>
+    <affiliate-btns @FetchWords="FetchWords" @ToggleTable="ToggleTable" :isOpen="isTableOpen"/>
     <words-tables v-if="isTableOpen" :tables="tables" @showDetail="showDetail"/>
     <word-details v-if="word" :word="word" @closeModal="closeModal"/>
   </section>
@@ -13,17 +13,17 @@ import affiliateService from "../services/affiliateService";
 import WordDetails from "../components/WordDetailsCpm";
 
 export default {
-  components: {
-    AffiliateBtns,
-    wordsTables,
-    WordDetails
-  },
   data() {
     return {
       isTableOpen: false,
       tables: [],
       word: null
     };
+  },
+  components: {
+    AffiliateBtns,
+    wordsTables,
+    WordDetails
   },
   methods: {
     FetchWords() {
@@ -32,9 +32,9 @@ export default {
         .then(res => this.$toast.Success("Words Successfully Fetched!"))
         .catch(err => this.$toast.Error("Something goes wrong"));
     },
-    ShowWords() {
+    ToggleTable() {
       if (this.isTableOpen) {
-        isTableOpen = false;
+        this.isTableOpen = false;
         return;
       }
       affiliateService
