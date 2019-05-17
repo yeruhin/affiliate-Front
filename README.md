@@ -10,7 +10,7 @@ Click the "show report" button to send the whole tables from backend and render 
 
 Each word click open modal with word details, the modal contain word score & tags.
 
-Affiliate-test use vue.js on Front-end & node.js with mongoDB on the Back-end
+Affiliate-test use vue.js on Front-end & node.js with MySql on the Back-end
 
 To set up & run the project you need to download the front project and the backend project from here: https://github.com/yeruhin/affiliate-back
 
