@@ -44,7 +44,7 @@ export default {
           this.isTableOpen = true;
           this.$toast.Success("Enjoy!");
         })
-        .catch(err => this.$toast.Error("Something goes wrong"));
+        .catch(err => this.$toast.Error("Something goes wrong try fetch again"));
     },
     showDetail(id) {
       this.tables.forEach(table => {

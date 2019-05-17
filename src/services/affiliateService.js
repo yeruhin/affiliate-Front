@@ -9,6 +9,11 @@ async function loadWords() {
 
 async function query() {
     const res = await axios.get(`${GROUP_ROUTE}/tweet-report`)
+    let isEmpty = res.data.reduce((acc, val) => {
+        if (val.length) acc = false
+        return acc
+    }, true)
+    if (isEmpty) throw new Error
     return res.data
 }
 
